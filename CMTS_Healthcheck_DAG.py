@@ -1,3 +1,28 @@
+# Description:
+# This Python script contains a Directed Acyclic Graph (DAG) for performing routine health checks on Cable Modem Termination Systems (CMTS)
+# within a network infrastructure. The script utilizes Apache Airflow, a platform for programmatically authoring, scheduling, and monitoring workflows,
+# to orchestrate the execution of various tasks involved in the health check process.
+#
+# Key Features:
+# 1. Modular Architecture: The script is organized into modular components, allowing for easy maintenance, scalability, and reuse of code.
+# 2. Custom Libraries: Custom libraries such as my_lib, my_error_management, and my_success_management provide error handling,
+#    success management, and runtime functionalities tailored to the specific requirements of the health check workflow.
+# 3. Task Definitions: Tasks are defined for initializing the workflow (MyInstanceInitOperator), executing health checks on Cisco,
+#    Casa Systems, and Arris CMTS devices using Ansible playbooks (MyAnsiblePlaybookOperator), and finalizing the workflow (MyInstanceExitOperator).
+#    Additionally, a task (MyPythonOperator) is included for aggregating and writing partial and total statistics to an InfluxDB database.
+# 4. Environment Configuration: The script supports loading variables from the environment to customize the health check process based on specific configurations.
+# 5. Error Handling and Logging: Comprehensive error handling mechanisms are implemented to ensure robustness and reliability during task execution.
+#    Detailed logging is provided to track the progress and status of each task.
+#
+# Usage:
+# To execute the CMTS health check workflow, deploy the script within an Apache Airflow environment and schedule the DAG (es4-88j-6iy) accordingly.
+# Ensure that the required dependencies, such as Ansible playbooks and custom libraries, are accessible to the Airflow environment.
+#
+# Note: This script serves as a foundation for automating the health check process of CMTS devices, offering flexibility for customization and extension
+# to meet specific network monitoring requirements.
+
+
+
 # coding: utf-8
 ########################################################################################################################
 ###########################################                       ######################################################
@@ -162,4 +187,4 @@ def write_influx_total_stats(**kwargs):
     fields = {'OFFLINE': len(nodes_affected_per_vendor['arris']), 'OK': len(nodes_not_affected_per_vendor['arris'])}
     mat_write_influx(measurement = 'CMTS Arris Affection', tags=tags, fields=fields)
     
-    total_nodes_affected_counter = len(nodes_affected_per_vendor['cisco']) + len(nodes
+    total_nodes_affected_counter = len(nodes_affected_per_vendor['cisco']) + len(nodes)
