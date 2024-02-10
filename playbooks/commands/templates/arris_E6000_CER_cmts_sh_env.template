@@ -1,0 +1,5 @@
+Value PEM (\S+)
+Value General_Status (\S+)
+
+Start
+  ^${PEM}\s+${General_Status} -> Record
