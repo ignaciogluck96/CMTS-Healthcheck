@@ -1,0 +1,8 @@
+Interface                       Cable Modem                                        Description
+              Total Reg   Oper  Unreg Offline Wideband initRC initD initIO initO   
+C1/0/0/UB     100   129   100   0     0       129      0      0     0      0            KLP
+C1/0/0/U0     100     3     100     2     0       0        0      0     0      0       KLP
+C1/0/0/U1     100     1     100     0     0       0        0      0     0      0       KLP
+C1/0/0/U8     100     4     100     0     0       0        0      0     0      0       MFE
+C1/0/0/U9     100     1     100     0     0       0        0      0     0      0       MFE
+C1/0/1/UB     100   279   100   0     0       279      0      0     0      0        MFW

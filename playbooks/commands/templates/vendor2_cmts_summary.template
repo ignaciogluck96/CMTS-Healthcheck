@@ -1,0 +1,8 @@
+Value INTERFACE (\S+)
+Value Total (\d+)
+Value Active (\d+)
+Value Offline (\d+)
+Value Description (.+)
+
+Start
+  ^\s+${INTERFACE}\s+\d+\s+\d+\s+${Total}\s+${Active}\s+\d+\s+\d+\s+\d+\s+\S+\s+${Description} -> Record
