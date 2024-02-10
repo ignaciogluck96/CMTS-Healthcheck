@@ -341,3 +341,4 @@ end = MyInstanceExitOperator(task_id='My_Finalize', trigger_rule='one_success', 
 ########################################################################################################################
 
 init >> [Vendor1_CMTS, Vendor2_CMTS, Vendor3_CMTS] >> Get_Stats_CMTS >> end
+
