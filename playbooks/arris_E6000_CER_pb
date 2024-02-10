@@ -1,0 +1,37 @@
+---
+- hosts: localhost
+  #hosts: all
+  gather_facts: false
+  connection: local
+  #vars:
+  #  file_name_from_form: "{{ lookup('env','file_name_from_form') }}"
+  tasks:
+  
+     - name: -- SET FACT hostname --
+       set_fact: 
+         hostname: "localhost_arris"
+       delegate_to: localhost
+       
+     - name: -- SET FACT vendor --
+       set_fact: 
+         vendor: "arris"
+       delegate_to: localhost
+
+     - name: -- SET FACT cmts_summary --
+       set_fact: 
+         cmts_summary: "{{ lookup('template','commands/arris_E6000_CER_R3_cmts_summary_short.output') | parse_cli_textfsm('commands/templates/arris_E6000_CER_cmts_summary.template') }}"
+       delegate_to: localhost
+      
+     - name: -- SET FACT sh_env --
+       set_fact: 
+#         environment: "{{ lookup('template','commands/arris_E6000_CER_R3_sh_env.output') | parse_cli_textfsm('commands/templates/arris_E6000_CER_cmts_sh_env.template') }}"
+         sh_env: "[{'name': 'PEM A','state': 'NORMAL'},{'name': 'PEM B','state': 'NORMAL'},{'name': 'PEM C','state': 'WARNING'}]"
+       delegate_to: localhost
+       
+###################
+
+     - name: template @ GENERA variables.json
+       copy:
+         content: "{{ lookup('template', 'commands/templates/variables.j2') | to_nice_json }}"
+         dest: "{{lookup('env','TASK_WORKING_FOLDER')}}/_variables.json"
+         mode: 0644
