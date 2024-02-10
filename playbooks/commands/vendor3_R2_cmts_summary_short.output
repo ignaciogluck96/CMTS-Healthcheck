@@ -1,7 +1,0 @@
-Upstream       Mac Total   Active  Registered Secondary  Offline  Bonding  Non_Bonding Channel
-Interface      Int Modems  Modems  Modems     Modems     Modems   Modems   Modems      Description
-1/0.0/0        1   100      100      81         208        0        73       8           YQD
-1/0.1/0        1   100     100     112        178        0        104      8           YQD
-1/0.2/0        1   100     80     110        174        20        106      4           BBC
-1/1.0/0        1   100     100     195        302        0        187      8           RT4
-1/1.1/0        1   100     100     116        379        0        113      3           RT4

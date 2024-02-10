@@ -1,7 +1,0 @@
-Upstream       Mac Total   Active  Registered Secondary  Offline  Bonding  Non_Bonding Channel
-Interface      Int Modems  Modems  Modems     Modems     Modems   Modems   Modems      Description
-0/0.0/0        1   83      83      81         208        0        73       8           VS2
-0/0.1/0        1   113     113     112        178        0        104      8           VS2
-0/0.2/0        1   112     112     110        174        0        106      4           VS2
-0/1.0/0        1   10     2     195        302        8        187      8           SOP
-0/1.1/0        1   10     2     116        379        8        113      3           SOP
