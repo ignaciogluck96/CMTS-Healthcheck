@@ -1,5 +1,0 @@
-Value Module (\S+)
-Value Status (\S+)
-
-Start
-  ^${Module}\s+${Status} -> Record
