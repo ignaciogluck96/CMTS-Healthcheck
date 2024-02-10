@@ -1,0 +1,48 @@
+---
+- hosts: localhost
+  #hosts: all
+  gather_facts: false
+  connection: local
+  #vars:
+  #  file_name_from_form: "{{ lookup('env','file_name_from_form') }}"
+  tasks:
+  
+     - name: -- SET FACT hostname1 --
+       set_fact: 
+         hostname1: "HOSTNAME1"
+       delegate_to: localhost
+       
+     - name: -- SET FACT hostname2 --
+       set_fact: 
+         hostname2: "HOSTNAME2"
+       delegate_to: localhost
+       
+       
+     - name: -- SET FACT vendor1 --
+       set_fact: 
+         vendor1: "VENDOR2"
+       delegate_to: localhost
+       
+     - name: -- SET FACT vendor2 --
+       set_fact: 
+         vendor2: "VENDOR2"
+       delegate_to: localhost
+       
+
+     - name: -- SET FACT cmts_summary R3--
+       set_fact: 
+         cmts_summary1: "{{ lookup('template','commands/VENDOR2_cmts_summary_short.output') | parse_cli_textfsm('commands/templates/vendor2_cmts_summary.template') }}"
+       delegate_to: localhost
+       
+     - name: -- SET FACT cmts_summary R2--
+       set_fact: 
+         cmts_summary2: "{{ lookup('template','commands/VENDOR2_cmts_summary_short.output') | parse_cli_textfsm('commands/templates/vendor2_cmts_summary.template') }}"
+       delegate_to: localhost
+       
+###################
+
+     - name: template @ GENERA variables.json
+       copy:
+         content: "{{ lookup('template', 'commands/templates/variables.j2') | to_nice_json }}"
+         dest: "{{lookup('env','TASK_WORKING_FOLDER')}}/_variables.json"
+         mode: 0644
