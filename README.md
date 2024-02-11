@@ -1,4 +1,4 @@
-# Healthcheck Project
+# CMTS Healthcheck
 
 This project focuses on performing health checks on various CMTS (Cable Modem Termination System) devices from different vendors using Ansible playbooks.
 
