@@ -52,6 +52,14 @@ Execute the Airflow DAG CMTS_Healthcheck_Dag.py to perform the health checks.
 Review the output generated in the commands directory for each vendor.
 
 ```
+
+## Data visualization
+
+```markdown
+The collected data is uploaded to InfluxDB for storage and visualization. Grafana can then be used to create dashboards and graphs based on this data.
+
+```
+
 ## Contributions
 
 ```markdown
