@@ -56,12 +56,14 @@ Review the output generated in the commands directory for each vendor.
 ## Data visualization
 
 ```markdown
-The collected data is uploaded to InfluxDB for storage and visualization. Grafana can then be used to create dashboards and graphs based on this data.
+The collected data is uploaded to InfluxDB for storage and visualization.
+Grafana can then be used to create dashboards and graphs based on this data.
 
 ```
 
 ## Contributions
 
 ```markdown
-Contributions are welcome! If you have suggestions or improvements, feel free to open an issue or create a pull request.
+Contributions are welcome! If you have suggestions or improvements, feel free to
+open an issue or create a pull request.
 ```
