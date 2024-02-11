@@ -57,9 +57,3 @@ Review the output generated in the commands directory for each vendor.
 ```markdown
 Contributions are welcome! If you have suggestions or improvements, feel free to open an issue or create a pull request.
 ```
-
-
-## License
-```markdown
-This project is licensed under the MIT License.
-```
