@@ -62,6 +62,5 @@ The collected data is uploaded to InfluxDB for storage and visualization. Grafan
 
 ## Contributions
 
-```markdown
 Contributions are welcome! If you have suggestions or improvements, feel free to open an issue or create a pull request.
-```
+
